@@ -17,8 +17,6 @@ const cluesArray = [
   clue: "Ledtråd 6: Man kan nästan tro att det är en tysk som äger det här stället!"}
 ]
 
-
-
 const Startpage = () => {
   const [firstAnswerValue, setFirstAnswerValue] = useState("");
   const [tries, setTries] = useState(1)
@@ -26,49 +24,52 @@ const Startpage = () => {
   const [isCounter, setIsCounter] = useState("");
   const [isResponse, setIsResponse] = useState("");
   const [clue, setClue] = useState(["Ledtråd 1: Finns på två ställen."])
+  const [revealLink, setRevealLink] = useState(false);
 
   const rightAnswer= "Güntherska"
 
   const checkFirstAnswer = (event) => {
     event.preventDefault();
-   
-    if(firstAnswerValue !== rightAnswer) {
-      setTries(tries + 1)
+
+        if(firstAnswerValue !== rightAnswer) {
+          setTries(tries + 1)
+         
+              // console.log(cluesArray)
+        cluesArray.forEach(item => {
+          if (item.id === tries+1){
+            console.log(item.clue)
+            
+            setClue(item.clue)
+          }
+         
+        })
+
+          let amountLeft = 5 - tries;
+          
+          setIsResponse(`Det var fel!
+          `)
+          setIsCounter(` Försök kvar: ${amountLeft}`)
+    
+    
+          if(tries === 5){
+            setIsResponse(`Messa Tova och fråga vart ni ska!`)
+            setIsCounter(`Game over!`)
+            setIsHidden(false)
+          }
+        }
+        else if(firstAnswerValue === rightAnswer){
+          setTries(tries +1)
+          setIsResponse("Rätt svar! Ses där klockan ..")
+          setRevealLink(true);
+       
+          setIsHidden(false)
+          if(tries === 6){
+            setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan ..")
+          }
+        }
      
-          // console.log(cluesArray)
-    cluesArray.forEach(item => {
-      if (item.id === tries+1){
-        console.log(item.clue)
-        
-        setClue(item.clue)
-      }
      
-    })
-
-
-      let amountLeft = 5 - tries;
-      
-      setIsResponse(`Ni svarade ${firstAnswerValue}. Det är fel!
-      `)
-      setIsCounter(` Försök kvar: ${amountLeft}`)
-
-
-      if(tries === 5){
-        setIsResponse(`Messa Tova och fråga vart ni ska!`)
-        setIsCounter(`Game over!`)
-        setIsHidden(false)
-      }
-    }
-    else if(firstAnswerValue === rightAnswer){
-      setTries(tries +1)
-      setIsResponse("Rätt svar! Ses där klockan ..")
    
-      setIsHidden(false)
-      if(tries === 6){
-        setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan ..")
-      }
-    }
- 
   }
 
   return ( 
@@ -118,15 +119,18 @@ const Startpage = () => {
       </form>
       : null }
       <div className="revealAnswer">
-        <p className="response">
-        {isResponse}
-        </p>
-        <h1 className="counter">
+        <div className="response">
+          <p>{isResponse}</p>
+        
+        {revealLink ? <button>
+          <Link to="/second-quest">Gå vidare 
+</Link>
+        </button> :null}
+        </div>
+        {isHidden ?
+        <h2 className="counter">
           {isCounter}
-        </h1>
-        <p className="tries">
-
-        </p>
+        </h2> :null }
         </div>
       </div>
       </div>
