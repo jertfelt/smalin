@@ -1,16 +1,38 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 const Startpage = () => {
   const [firstAnswerValue, setFirstAnswerValue] = useState("");
+  const [tries, setTries] = useState(1)
+  const [isHidden, setIsHidden] = useState(false);
+  const [isResponse, setIsResponse] = useState("");
 
-  
-
+  const rightAnswer= "Güntherska"
+ 
   const checkFirstAnswer = (event) => {
     event.preventDefault();
-    
-    let response =`
-    Ni svarade: ${firstAnswerValue}`
+   
+    if(firstAnswerValue !== rightAnswer) {
+      setTries(tries + 1)
+      console.log(tries)
+      let amountLeft = 5 - tries;
+      console.log(amountLeft)
+      setIsResponse(`Ni svarade ${firstAnswerValue}. Det är fel!
+      Försök kvar: ${amountLeft}`)
+      if(tries === 5){
+        console.log("Stop!")
+      }
+    }
+    else if(firstAnswerValue === rightAnswer){
+      setTries(tries +1)
+      console.log("Rätt svar")
+      setIsHidden(true)
+      if(tries === 5){
+        console.log("På sista försöket? Najs.")
+      }
+    }
+ 
   }
 
   return ( 
@@ -58,10 +80,10 @@ const Startpage = () => {
       </form>
       <div className="revealAnswer">
         <p className="response">
-      
+        {isResponse}
         </p>
         <p className="tries">
-          
+
         </p>
         Om ni inte löser det på fem försök så messa Tova.</div>
       </div>
