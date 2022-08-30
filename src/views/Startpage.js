@@ -4,44 +4,30 @@ import { useState, useEffect } from "react";
 
 const cluesArray = [
   {id: 1,
-  clue: "Ledtråd 1: Finns på två ställen."}
+  clue: "Ledtråd 1: Finns på två ställen."},
+  {id: 2,
+    clue:"Ledtråd 2: Här finns det bakelser"},
+  {id: 3,
+    clue:"Ledtråd 3: En butik för de snabba ärendena, samt en finare sittplats för adeln."},
+  {id: 4,
+    clue:"Ledtråd 4: Om du väljer att sitta utomhus kan du se både ån, bilar, broar och glass."},
+  {id: 5,
+  clue: "Ledtråd 5: Hörnet och konditoriet ligger exakt 54 meter ifrån varandra."},
+  {id: 6,
+  clue: "Ledtråd 6: Man kan nästan tro att det är en tysk som äger det här stället!"}
 ]
-console.log(cluesArray)
-cluesArray.forEach(item => {
-  console.log(item.clue)
-})
-// {
-//   "allClues":
-//   { "item1":
-//     { clue: "Ledtråd 1: Finns på två ställen."},
-//     "item2":{
-//       clue:"Ledtråd 2: Här finns det bakelser"
-//     },
-//     "item3":{
-//       clue:"Ledtråd 3: En butik för de snabba ärendena, samt en finare sittplats för adeln."
-//     },
-//     "item4":{
-//       clue:"Ledtråd 4: Om du väljer att sitta utomhus kan du se både ån, bilar, broar och glass."
-//     },
-//     "item5":{
-//       clue:"Ledtråd 5: Hörnet och konditoriet ligger exakt 54 meter ifrån varandra."
-//     }
-//   } 
-// }
+
+
 
 const Startpage = () => {
   const [firstAnswerValue, setFirstAnswerValue] = useState("");
   const [tries, setTries] = useState(1)
-  const [isHidden, setIsHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
   const [isCounter, setIsCounter] = useState("");
   const [isResponse, setIsResponse] = useState("");
-  const [clue, setClue] = useState("")
+  const [clue, setClue] = useState(["Ledtråd 1: Finns på två ställen."])
 
   const rightAnswer= "Güntherska"
-
-
-// console.log(cluesArray.allClues.item5.clue)
-//   //!item5: femman kan bytas ut
 
   const checkFirstAnswer = (event) => {
     event.preventDefault();
@@ -49,7 +35,17 @@ const Startpage = () => {
     if(firstAnswerValue !== rightAnswer) {
       setTries(tries + 1)
      
+          // console.log(cluesArray)
+    cluesArray.forEach(item => {
+      if (item.id === tries+1){
+        console.log(item.clue)
+        
+        setClue(item.clue)
+      }
      
+    })
+
+
       let amountLeft = 5 - tries;
       
       setIsResponse(`Ni svarade ${firstAnswerValue}. Det är fel!
@@ -58,16 +54,18 @@ const Startpage = () => {
 
 
       if(tries === 5){
-        setIsResponse(`Ni är för dåliga för att kasta sten. Messa Tova och fråga vart ni ska!`)
+        setIsResponse(`Messa Tova och fråga vart ni ska!`)
         setIsCounter(`Game over!`)
+        setIsHidden(false)
       }
     }
     else if(firstAnswerValue === rightAnswer){
       setTries(tries +1)
-      console.log("Rätt svar")
-      setIsHidden(true)
-      if(tries === 5){
-        console.log("På sista försöket? Najs.")
+      setIsResponse("Rätt svar! Ses där klockan ..")
+   
+      setIsHidden(false)
+      if(tries === 6){
+        setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan ..")
       }
     }
  
@@ -97,9 +95,10 @@ const Startpage = () => {
       <p>{clue}</p>
       </div>
       <div className="input-svar">
-      <h3>Har ni löst ledtråden?</h3>
+      {isHidden ?
       <form onSubmit={checkFirstAnswer}>
-      <label>Skriv in vad ni tror att det är:</label>
+       <h3>Har ni löst ledtråden?</h3>
+      <label>Skriv in vad ni tror att det är, ni har fem försök på er:</label> 
       <div className="row">
 
       <input type="text"
@@ -115,7 +114,9 @@ const Startpage = () => {
       </input>
       
       </div>
+       
       </form>
+      : null }
       <div className="revealAnswer">
         <p className="response">
         {isResponse}
@@ -126,7 +127,7 @@ const Startpage = () => {
         <p className="tries">
 
         </p>
-        Om ni inte löser det på fem försök så messa Tova.</div>
+        </div>
       </div>
       </div>
       </span>
