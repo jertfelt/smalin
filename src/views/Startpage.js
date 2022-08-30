@@ -2,26 +2,64 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
+const cluesArray = [
+  {id: 1,
+  clue: "Ledtråd 1: Finns på två ställen."}
+]
+console.log(cluesArray)
+cluesArray.forEach(item => {
+  console.log(item.clue)
+})
+// {
+//   "allClues":
+//   { "item1":
+//     { clue: "Ledtråd 1: Finns på två ställen."},
+//     "item2":{
+//       clue:"Ledtråd 2: Här finns det bakelser"
+//     },
+//     "item3":{
+//       clue:"Ledtråd 3: En butik för de snabba ärendena, samt en finare sittplats för adeln."
+//     },
+//     "item4":{
+//       clue:"Ledtråd 4: Om du väljer att sitta utomhus kan du se både ån, bilar, broar och glass."
+//     },
+//     "item5":{
+//       clue:"Ledtråd 5: Hörnet och konditoriet ligger exakt 54 meter ifrån varandra."
+//     }
+//   } 
+// }
+
 const Startpage = () => {
   const [firstAnswerValue, setFirstAnswerValue] = useState("");
   const [tries, setTries] = useState(1)
   const [isHidden, setIsHidden] = useState(false);
+  const [isCounter, setIsCounter] = useState("");
   const [isResponse, setIsResponse] = useState("");
+  const [clue, setClue] = useState("")
 
   const rightAnswer= "Güntherska"
- 
+
+
+// console.log(cluesArray.allClues.item5.clue)
+//   //!item5: femman kan bytas ut
+
   const checkFirstAnswer = (event) => {
     event.preventDefault();
    
     if(firstAnswerValue !== rightAnswer) {
       setTries(tries + 1)
-      console.log(tries)
+     
+     
       let amountLeft = 5 - tries;
-      console.log(amountLeft)
+      
       setIsResponse(`Ni svarade ${firstAnswerValue}. Det är fel!
-      Försök kvar: ${amountLeft}`)
+      `)
+      setIsCounter(` Försök kvar: ${amountLeft}`)
+
+
       if(tries === 5){
-        console.log("Stop!")
+        setIsResponse(`Ni är för dåliga för att kasta sten. Messa Tova och fråga vart ni ska!`)
+        setIsCounter(`Game over!`)
       }
     }
     else if(firstAnswerValue === rightAnswer){
@@ -56,7 +94,7 @@ const Startpage = () => {
       </div>
       <div className="row space-between">
       <h3>Var?</h3>
-      <p>Ledtråd:</p>
+      <p>{clue}</p>
       </div>
       <div className="input-svar">
       <h3>Har ni löst ledtråden?</h3>
@@ -82,6 +120,9 @@ const Startpage = () => {
         <p className="response">
         {isResponse}
         </p>
+        <h1 className="counter">
+          {isCounter}
+        </h1>
         <p className="tries">
 
         </p>

@@ -1,0 +1,12 @@
+//   [
+  //    {id: 1,
+  //     clue: "Ledtråd 1: Finns på två ställen. "},
+  //     {id: 2,
+  //     clue:"Ledtråd 2: Här finns det bakelser"},
+  //     {id: 3,
+  //       clue:"Ledtråd 3: En butik för de snabba ärendena, samt en finare sittplats för adeln."},
+  //     {id: 4,
+  //       clue:"Ledtråd 4: Om du väljer att sitta utomhus kan du se både ån, bilar, broar och glass."},
+  //     {id: 5,
+  //       clue: "Ledtråd 5: Hörnet och konditoriet ligger exakt 54 meter ifrån varandra."},
+  // ]
