@@ -7,8 +7,131 @@ margin: 0 auto;
 padding:2rem;
 font-family: Lato;
 }
+.welcome{
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+}
+.img_welcome{
+  height:30%;
+ 
+  position:absolute;
+  top:-4rem;
+  right:30%;
+  z-index:1;
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+}
+.img_welcome:hover{
+  -webkit-filter: grayscale(0%); 
+  filter: grayscale(0%);
+}
+
+.welcomeheader{
+  position:absolute;
+  top:15rem;
+  left:5rem;
+}
+.welcome--txt span{
+  position:relative;
+  top:20rem;
+  padding:4rem;
+  
+}
+.welcome--txt p{
+  font-family: "Bree Serif";
+  font-size:18px;
+}
 
 .really-big-text{
   font-family:Pacifico;
   font-size:80px;
+  z-index:2;
 }
+.img--round{
+  border-radius: 50%;
+}
+
+.column{
+  display:flex;
+  flex-direction: column;
+}
+
+.row{
+  display:flex;
+  flex-direction: row;
+}
+.row h3{
+  padding-right:3rem;
+}
+
+.input-svar{
+  max-width:50%;
+  background-color: black;
+  color:white;
+  padding:3rem;
+}
+
+.input-svar input{
+  margin-top:10px;
+  padding:4px;
+  
+}
+.input-svar .sendButton{
+  margin-top:10px;
+  margin-left:6px;
+  background-color: pink;
+  border:none;
+  border-radius: 3px;
+  color:black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.input-svar .sendButton:active{
+  background-color: white;
+}
+
+.revealAnswer{
+  margin-top:10px;
+}
+
+.revealAnswer-wrong{
+  color:red;
+}
+
+@media screen and (max-width: 600px){
+  .welcome{
+    padding:-1rem;
+  }
+  .really-big-text{
+  
+    font-size:60px;
+    
+ 
+  }
+  .welcome--txt p{
+   max-width:90%;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .really-big-text{
+  padding-bottom:3rem;
+  }
+  .welcomeheader{
+    position:absolute;
+    top:13rem;
+    left:5rem;
+  }
+  .welcome--txt span{
+    position:relative;
+    top:20rem;
+    padding:4rem;
+    left:5rem;
+  
+  }
+  .welcome--txt p{
+    padding-right:8rem;
+  }
+}
+
