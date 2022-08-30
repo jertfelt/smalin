@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/quest-of-smalin/static/css/main.d8af798a.css",
-    "main.js": "/quest-of-smalin/static/js/main.a0a205a6.js",
-    "index.html": "/quest-of-smalin/index.html",
-    "main.d8af798a.css.map": "/quest-of-smalin/static/css/main.d8af798a.css.map",
-    "main.a0a205a6.js.map": "/quest-of-smalin/static/js/main.a0a205a6.js.map"
+    "main.css": "/smalin/static/css/main.d8af798a.css",
+    "main.js": "/smalin/static/js/main.a0a205a6.js",
+    "index.html": "/smalin/index.html",
+    "main.d8af798a.css.map": "/smalin/static/css/main.d8af798a.css.map",
+    "main.a0a205a6.js.map": "/smalin/static/js/main.a0a205a6.js.map"
   },
   "entrypoints": [
     "static/css/main.d8af798a.css",
