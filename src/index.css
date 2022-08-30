@@ -7,3 +7,8 @@ margin: 0 auto;
 padding:2rem;
 font-family: Lato;
 }
+
+.really-big-text{
+  font-family:Pacifico;
+  font-size:80px;
+}
