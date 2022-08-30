@@ -1,5 +1,6 @@
 import Startpage from "./views/Startpage";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import SecondQuest from "./views/SecondQuest";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
      <Routes>
       <Route exact path="/" element={<Startpage />}></Route>
+      <Route exact path="/second-quest" element={<SecondQuest />}></Route>
      </Routes>
     </div>
   </Router>
