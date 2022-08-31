@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/smalin/static/css/main.d8af798a.css",
-    "main.js": "/smalin/static/js/main.87b15888.js",
+    "main.js": "/smalin/static/js/main.1130badf.js",
     "index.html": "/smalin/index.html",
     "main.d8af798a.css.map": "/smalin/static/css/main.d8af798a.css.map",
-    "main.87b15888.js.map": "/smalin/static/js/main.87b15888.js.map"
+    "main.1130badf.js.map": "/smalin/static/js/main.1130badf.js.map"
   },
   "entrypoints": [
     "static/css/main.d8af798a.css",
-    "static/js/main.87b15888.js"
+    "static/js/main.1130badf.js"
   ]
 }
