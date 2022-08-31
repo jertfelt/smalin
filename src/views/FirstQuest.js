@@ -5,9 +5,10 @@ const FirstQuest = () => {
   const [showResults, setShowResults] = useState(false);
   const [showMap, setShowMap] = useState(false);
 
-  const [fordon, setFordonValue] = useState("Snabb");
-  const [fontValue, setFontValue] = useState("NI SKREV INGET");
-  const [synonym, setSynonymValue] = useState("En vanlig volvo");
+  const [fordon, setFordonValue] = useState("");
+  const [fontValue, setFontValue] = useState("");
+  const [synonym, setSynonymValue] = useState("");
+  const [errormessage, setErrorMessage] = useState("")
   
 
   const svar1 = "FONT"
@@ -17,8 +18,20 @@ const FirstQuest = () => {
 
   const checkForAnswers = (e) => {
     e.preventDefault();
-    console.log(fordon, fontValue, synonym)
-    setShowResults(true);
+    
+    if (fordon === "" || fontValue === "" || synonym === "" ){
+     setErrorMessage("Hallå, ni har glömt något av fälten.")
+    }
+    else {
+      if (fordon === svar2) {
+        setShowResults(true);
+        setErrorMessage("")
+      }
+      else {
+        setErrorMessage("Hm. Vilket fordon var det nu igen som ni skulle välja?")
+      }
+    }
+   
   }
 
   const revealMap = () => {
@@ -114,8 +127,9 @@ const FirstQuest = () => {
     
      
    
-     </div>
-    </form>
+      </div>
+      </form>
+      <p className="center Bree font--20">{errormessage}</p>
   
     
   </div> );
