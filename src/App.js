@@ -7,8 +7,9 @@ function App() {
   <Router basename="/smalin">
     <div className="App">
      <Routes>
-      <Route exact path="/start" element={<Startpage />}></Route>
-      <Route exact path="/second-quest" element={<SecondQuest />}></Route>
+      <Route exact path="/" element={<Startpage />}></Route>
+      <Route path="/second-quest" element={<SecondQuest />} >
+       </Route>
      </Routes>
     </div>
   </Router>
