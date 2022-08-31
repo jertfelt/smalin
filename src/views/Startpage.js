@@ -81,7 +81,7 @@ const Startpage = () => {
       className="img_welcome
       img--round"></img>
       <span>
-      <p>Malin & Simon, härmed kallade 'brudparet' eller 'Smailon' eller 'Malon', är inbjudna till att delta i en högst oklar affär.</p>
+      <p>Malin & Simon, härmed kallade 'brudparet' eller 'Smailon', 'Smalin', 'Malimon' eller 'Malon', är inbjudna till att delta i en högst oklar affär.</p>
       <div className="column">
         <div className="row">
         <h3>När?</h3>
@@ -98,7 +98,7 @@ const Startpage = () => {
       <div className="input-svar">
       {isHidden ?
       <form onSubmit={checkFirstAnswer}>
-       <h3>Har ni löst ledtråden?</h3>
+       <h3>Vad heter stället dit ni ska?</h3>
       <label>Skriv in vad ni tror att det är, ni har fem försök på er:</label> 
       <div className="row">
 
@@ -123,7 +123,7 @@ const Startpage = () => {
           <p>{isResponse}</p>
         
         {revealLink ? <button>
-          <Link to="/second-quest">Gå vidare 
+          <Link to="/first-quest">Gå vidare 
 </Link>
         </button> :null}
         </div>
