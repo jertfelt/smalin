@@ -10,3 +10,8 @@
   //     {id: 5,
   //       clue: "Ledtråd 5: Hörnet och konditoriet ligger exakt 54 meter ifrån varandra."},
   // ]
+
+
+
+  länk till fontänen:
+  https://www.google.com/maps/place/Font%C3%A4n,+753+09+Uppsala/@59.8528516,17.6373206,18.88z/data=!4m20!1m14!4m13!1m4!2m2!1d17.7993927!2d59.733959!4e1!1m6!1m2!1s0x465fcb23d74b0de5:0xb8761c5f8cdc1931!2suppsala+akademiska+sjukhus!2m2!1d17.6378698!2d59.8528391!3e2!3m4!1s0x465fcb23d74b0de5:0xb8761c5f8cdc1931!8m2!3d59.8528391!4d17.6378698

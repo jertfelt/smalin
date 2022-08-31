@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect} from "react";
-
+import MapFountain from "../components/MapFountain";
 const FirstQuest = () => {
   const [showResults, setShowResults] = useState(false);
+  const [showMap, setShowMap] = useState(false)
  
   const svar1 = " FONT"
   const svar3= "ÄN är synonym till fortfarande"
   const svar2img = require("../assets/amb_VW_Crafter_-2020_UL.jpg");
 
-
+  const revealMap = () => {
+    setShowMap(true)
+  }
   
   const restart = () => {
     setShowResults(false);
@@ -33,7 +36,11 @@ const FirstQuest = () => {
           className="smallImg"
           alt="Ambulans"></img></div>
       </span>
-      <p className="Bree font--20">Kan ni lista ut vart ni ska nu? Annars så hittar er följeslagare vägen.</p>
+      <p className="Bree font--20">Kan ni lista ut vart ni ska nu? Annars kika här:</p>
+      <button onClick={{revealMap}} classname="revealMap">Kolla kartan</button>
+      <div>
+        <MapFountain />
+      </div>
     </div>
    
     <form className="first-quest-form column">
