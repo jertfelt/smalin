@@ -63,6 +63,9 @@ const FirstQuest = () => {
       <div className="mapContainer Bree">
         <MapFountain />
         <button onClick={closeMap}> Stäng kartan!</button>
+        <button className="next Bree"> <Link  to="/second-quest">Framme? Klicka här!
+          </Link></button>
+       
       </div> :null }
       <button className="next Bree "> 
           <Link to="/second-quest">Här är nästa steg!

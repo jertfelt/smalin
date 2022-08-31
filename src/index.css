@@ -118,41 +118,6 @@ font-family: Lato;
 }
 
 
-@media screen and (max-width: 600px){
-  .welcome{
-    padding:-1rem;
-  }
-  .really-big-text{
-  
-    font-size:60px;
-    
- 
-  }
-  .welcome--txt p{
-   max-width:90%;
-  }
-}
-
-@media screen and (min-width: 600px){
-  .really-big-text{
-  padding-bottom:3rem;
-  }
-  .welcomeheader{
-    position:absolute;
-    top:13rem;
-    left:5rem;
-  }
-  .welcome--txt span{
-    position:relative;
-    top:20rem;
-    padding:4rem;
-    left:5rem;
-  
-  }
-  .welcome--txt p{
-    padding-right:8rem;
-  }
-}
 
 .first-quest-container span p{
   margin-top:-5rem;
@@ -238,6 +203,7 @@ font-family: Lato;
   top:20%;
 }
 
+
 .first-quest-form{
   color:pink;
   padding:2rem;
@@ -320,4 +286,75 @@ font-family: Lato;
 }
 .resultat .next a:hover{
   color: white;
+}
+
+
+@media screen and (max-width: 600px){
+  .welcome{
+    padding:-1rem;
+  }
+  .really-big-text{
+  
+    font-size:60px;
+    
+ 
+  }
+  .welcome--txt p{
+   max-width:90%;
+  }
+  .resultat .column .row {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .resultat h3{
+    margin-top:-1rem;
+  }
+  .resultat .column .row img{
+    width:80%;
+    margin-top:-1rem;
+  }
+
+  .mapContainer{
+    max-width: 100%;
+    left:0;
+    top:5%;
+  }
+  .mapContainer iframe{
+    max-width: 100%;
+  }
+}
+
+
+
+@media screen and (min-width: 600px){
+  .really-big-text{
+  padding-bottom:3rem;
+  }
+  .welcomeheader{
+    position:absolute;
+    top:13rem;
+    left:5rem;
+  }
+  .welcome--txt span{
+    position:relative;
+    top:20rem;
+    padding:4rem;
+    left:5rem;
+  
+  }
+  .welcome--txt p{
+    padding-right:8rem;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .resultat {
+    width:80%;
+    left:5%;
+  }
+  .first-quest-container span p{
+    margin-top:1rem;
+  }
 }
