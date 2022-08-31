@@ -124,7 +124,7 @@ const Startpage = () => {
         
         {revealLink ? <button>
           <Link to="/first-quest">Gå vidare 
-</Link>
+          </Link>
         </button> :null}
         </div>
         {isHidden ?
