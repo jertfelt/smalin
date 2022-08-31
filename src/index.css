@@ -154,3 +154,24 @@ font-family: Lato;
   }
 }
 
+.first-quest-container span p{
+  margin-top:-5rem;
+  width:60%;
+ 
+}
+
+.smallImg{
+  height:200px;
+}
+
+.resultat {
+  padding:1rem;
+}
+
+.Bree {
+  
+  font-family: Bree Serif;
+}
+.font--20{
+  font-size:20px;
+}
