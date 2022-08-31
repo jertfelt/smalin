@@ -4,7 +4,7 @@ import SecondQuest from "./views/SecondQuest";
 
 function App() {
   return (
-  <Router>
+  <Router basename="/smalin">
     <div className="App">
      <Routes>
       <Route exact path="/start" element={<Startpage />}></Route>

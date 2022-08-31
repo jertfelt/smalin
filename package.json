@@ -1,7 +1,7 @@
 {
   "name": "smalins-hipp",
   "version": "0.1.0",
-  "homepage": "https://jertfelt.github.io/smalin",
+  "homepage": "https://jertfelt.github.io/smalin/",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
