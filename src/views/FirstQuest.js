@@ -73,7 +73,7 @@ const FirstQuest = () => {
       <p className="Bree font--20">Kan ni lista ut vart ni ska nu? Annars kika här:</p>
       <button onClick={revealMap} className="Bree" >Kolla kartan</button>
       {showMap ? 
-      <div className="mapContainer Bree">
+      <div className="Bree">
         <MapFountain />
         <button onClick={closeMap}> Stäng kartan!</button>
         <button className="next Bree"> <Link  to="/second-quest">Framme? Klicka här!
