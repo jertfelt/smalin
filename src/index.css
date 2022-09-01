@@ -47,6 +47,7 @@ font-family: Lato;
   font-family:Pacifico;
   font-size:80px;
   z-index:2;
+  line-height:1rem;
 }
 .img--round{
   border-radius: 50%;
@@ -287,7 +288,17 @@ font-family: Lato;
 .resultat .next a:hover{
   color: white;
 }
+.sendFirst:hover{
+    background-color: whitesmoke;
+}
 
+.password input {
+  padding: 0.2rem;
+  font-size:18px;
+}
+
+
+/*----------MEDIA QUERIES-------*/
 
 @media screen and (max-width: 600px){
 
@@ -299,7 +310,7 @@ font-family: Lato;
     padding:-1rem;
   }
   .really-big-text{
-  
+    line-height:3.4rem;
     font-size:60px;
     
  
@@ -322,12 +333,15 @@ font-family: Lato;
   }
 
   .mapContainer{
-    max-width: 100%;
-    left:0;
-    top:5%;
+   
+    margin: 0 auto;
+    padding:2rem;
+    top:-1rem;
+    
   }
   .mapContainer iframe{
     max-width: 100%;
+    
   }
 }
 
@@ -379,6 +393,7 @@ font-family: Lato;
   }
   .really-big-text{
     font-size:50px;
+    line-height:3rem;
   }
   .welcomeheader{
     left:5%;
@@ -391,4 +406,44 @@ font-family: Lato;
   .welcome--txt span{
     padding:1rem;
   }
+
+  .first-quest-container span p{
+    width:100%;
+  }
+
+  .first-quest-form {
+    margin:0 auto;
+    max-width:90%;
+    width:100%;
+    margin-left:-1rem;
+  }
+  .first-quest-form input{
+    max-width:80%;
+    font-size:18px;
+    padding:1rem;
+    margin-bottom:2rem;
+  }
+  .first-quest-form select{
+    margin-bottom:2rem;
+  }
+  
+  .mapContainer{
+    max-width: 120%;
+    width:110%;
+    height:190vh;
+    left:-20px;
+    top:-220px;
+    padding:2rem;
+    flex-wrap: wrap;
+  }
+
+  .mapContainer h1{
+    font-size:22px;
+  }
+
+  .mapContainer iframe{
+    margin: 0 auto;
+    width:90%;
+  }
+
 }

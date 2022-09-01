@@ -28,6 +28,7 @@ const Startpage = () => {
 
   const rightAnswer= "Güntherska"
 
+ 
   const checkFirstAnswer = (event) => {
     event.preventDefault();
 
@@ -68,9 +69,9 @@ const Startpage = () => {
           }
         }
      
-     
+      }
    
-  }
+
 
   return ( 
   <div className="welcome">

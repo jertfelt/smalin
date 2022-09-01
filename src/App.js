@@ -4,6 +4,7 @@ import {Helmet} from "react-helmet"
 import FirstQuest from "./views/FirstQuest";
 import SecondQuest from "./views/SecondQuest";
 import Favicon from "react-favicon"
+import SecondQ from "./views/SecondQ";
 
 
 function App() {
@@ -24,7 +25,10 @@ function App() {
       <Route exact path="/" element={<Startpage />}></Route>
       <Route path="/first-quest" element={<FirstQuest />} ></Route>
       <Route path="/second-quest" element={<SecondQuest />} >
-       </Route>
+      </Route>
+      <Route path="/test" 
+      element={<SecondQ />} >
+      </Route>
      </Routes>
     </div>
   </Router>

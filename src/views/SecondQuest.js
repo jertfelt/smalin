@@ -1,32 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import PasswordPrompt from "../components/PasswordPrompt";
 
-const SecondQuest = () => {
-  const [password, setPassword] =useState("")
-  const checkPassword = () => {
+const SecondQuest = (props) => {
+  const [revealSecondPage, setRevealSecondPage]= useState(false);
+  const [hidePasswordPrompt, setPasswordPrompt] = useState(true);
+  
 
-  }
+
+  setRevealSecondPage(true);
 
   return ( <div className="second-quest">
     <div>
       <article>
         <h1 className="really-big-text" >Andra etappen:</h1>
+        {hidePasswordPrompt ?
         <span>
-          <h2>Access denied!</h2>
-          <p className="Bree font--20">
-            Vad är lösenordet?
-          </p>
-          <form onSubmit={checkPassword}
-          className="password">
-            <input type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Gissa? Pfft.">
-
-            </input>
-            
-          </form>
-        </span>
+        
+        </span> :null}
       </article>
+      {revealSecondPage ?
+      <article className="revealedSecond">
+        <div className="second-quest-container">
+          
+        </div>
+      </article>:null}
     </div>
   </div> );
 }
