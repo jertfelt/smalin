@@ -11,7 +11,8 @@ const Password = () => {
   const {error, showError} = useErrorHandler(null);
   const [showData, setShowData] = useState([]);
 
-  const url = "../data/passwords.json";
+  let url = "../data/passwords.json";
+  let dataArr = [];
 
   const getData= () => {
     fetch(url ,{
@@ -21,17 +22,31 @@ const Password = () => {
       }
     })
     .then(function(res){
-      console.log(res)
+     
       return res.json();
     })
     .then(function(myJson){
-      console.log(myJson)
+      // console.log(myJson)
       setShowData(myJson);
     })
+    .then(()=> {
+      loop()})
   }
   useEffect(() => {
     getData()
+ 
+ 
   }, [])
+
+ const loop = () => {
+  
+  let dataArr = showData.passwords;
+  console.log(dataArr)
+  dataArr.forEach(item => {
+    console.log(item.word)
+  })
+ } 
+
 
   // const authHandler = async () => {
   //   try {
@@ -46,8 +61,9 @@ const Password = () => {
      <div className="App">
 
      {
-
-showData && showData.length>0 && showData.map((item)=><p>{item.about}</p>)
+      showData && showData.length>0 && showData.map((item)=>
+      
+      <p>{item.passwords}</p>)
 
      }
 
