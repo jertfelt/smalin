@@ -290,6 +290,11 @@ font-family: Lato;
 
 
 @media screen and (max-width: 600px){
+
+  .input-svar{
+    max-width:100%;
+  }
+ 
   .welcome{
     padding:-1rem;
   }
@@ -360,5 +365,30 @@ font-family: Lato;
   }
   .first-quest-container span p{
     margin-top:1rem;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .input-svar form .row{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-svar{
+    padding:1.3rem;
+   flex-wrap: wrap;
+  }
+  .really-big-text{
+    font-size:50px;
+  }
+  .welcomeheader{
+    left:5%;
+  }
+  .img_welcome{
+    right:5%;
+    top:-3%;
+  }
+
+  .welcome--txt span{
+    padding:1rem;
   }
 }
