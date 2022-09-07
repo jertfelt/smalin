@@ -4,8 +4,8 @@ import {Helmet} from "react-helmet"
 import FirstQuest from "./views/FirstQuest";
 import SecondQuest from "./views/SecondQuest";
 import Favicon from "react-favicon"
-
-
+import ThirdStop from "./views/ThirdStop";
+import "./App.scss";
 
 function App() {
   return (
@@ -25,6 +25,8 @@ function App() {
       <Route exact path="/" element={<Startpage />}></Route>
       <Route path="/first-quest" element={<FirstQuest />} ></Route>
       <Route path="/second-quest" element={<SecondQuest />} >
+      </Route>
+      <Route path="/third-stop" element={<ThirdStop />} >
       </Route>
    
      </Routes>

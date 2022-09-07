@@ -18,6 +18,17 @@ const cluesArray = [
 ]
 
 const Startpage = () => {
+
+  const bgColors = [{
+    value: 1,
+    label:"lavenderblush",
+  },
+  { value: 2,
+  label: "lightcoral"}
+  ]
+
+  const [bgColor, setBgColor] = useState(bgColors[0].label)
+
   const [firstAnswerValue, setFirstAnswerValue] = useState("");
   const [tries, setTries] = useState(1)
   const [isHidden, setIsHidden] = useState(true);
@@ -53,14 +64,14 @@ const Startpage = () => {
     
     
           if(tries === 5){
-            setIsResponse(`Messa Tova och fråga vart ni ska!`)
-            setIsCounter(`Game over!`)
+            setIsResponse(`Attans! Ni kom inte på det! Messa Tova och fråga vart ni ska!`)
             setIsHidden(false)
+            setBgColor(bgColors[1].label)
           }
         }
         else if(firstAnswerValue === rightAnswer){
           setTries(tries +1)
-          setIsResponse("Rätt svar! Ses där klockan ..")
+          setIsResponse("Rätt svar! Ses på Güntherska klockan 12.10. Klicka på knappen nedan för att gå till nästa steg!")
           setRevealLink(true);
        
           setIsHidden(false)
@@ -74,37 +85,61 @@ const Startpage = () => {
 
 
   return ( 
-  <div className="welcome">
-    <h1 className="really-big-text welcomeheader">Välkomna!</h1>
-    <div className="welcome--txt">
+  <div className="welcome"
+  style={{ backgroundColor: bgColor, width: "100%", height: "100%"}}>
+    <h1 className="really-big-text">Välkomna!</h1>
+    <div className="welcome--txt bree normal-text">
       <img src="https://scontent-arn2-2.xx.fbcdn.net/v/t31.18172-8/18076700_10154425240715069_8532404569105354063_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EC-zFmWbtlkAX-AFvoO&_nc_ht=scontent-arn2-2.xx&oh=00_AT8S3siac24omVeGREKGwMl61QrgXy7FKtEvEgApznpNLg&oe=63350907"
       alt="Simon och Malin firar jul"
-      className="img_welcome
+      className="
       img--round"></img>
-      <span>
+      <div>
       <p>Malin & Simon, härmed kallade 'brudparet' eller 'Smailon', 'Smalin', 'Malimon' eller 'Malon', är inbjudna till att delta i en högst oklar affär.</p>
-      <div className="column">
-        <div className="row">
-        <h3>När?</h3>
-      <p>25:e september</p>
-        </div>
-        <div className="row">
-      <h3>Hur?</h3>
-      <p>Ta med er mobil, glatt humör. Färda er kollektivt, alternativt cykel. Ingen bil!</p>
-      </div>
-      <div className="row space-between">
-      <h3>Var?</h3>
-      <p>{clue}</p>
-      </div>
+      <div className="welcome--wrapper">
+      <article className="welcome--details">
+      <span className="">
+        <span className="">
+          <h3>När?</h3>
+          <p>25:e september</p>
+        </span>
+        <span className="">
+          <h3>Hur?</h3>
+          <p>Ta med er mobil, glatt humör. Färda er kollektivt, alternativt cykel. Ingen bil!</p>
+        </span>
+        
+      </span>
+      </article>
       <div className="input-svar">
-      {isHidden ?
-      <form onSubmit={checkFirstAnswer}>
+     
+      <form
+      className="form--start"
+       onSubmit={checkFirstAnswer}>
+        {isHidden ? <>
+        <span className="form--startclue">
+        <h3 className="pacifico">Var?</h3>
+        <p className="clue">{clue}</p>
+        </span>
        <h3>Vad heter stället dit ni ska?</h3>
-      <label>Skriv in vad ni tror att det är, ni har fem försök på er:</label> 
-      <div className="row">
+      <label>Skriv in vad ni tror att det är, ni har fem försök på er:</label>
+      </> 
+      : null }
+      <div className="revealAnswer--start">
+          <p>{isResponse}</p>
+        {revealLink ? <button>
+          <Link to="/first-quest">Gå vidare 
+          </Link>
+        </button> :null}
+        {isHidden ?
+        <h2>
+          {isCounter}
+        </h2> :null }
+        </div>
+        {isHidden ?
+      <span>
+        
 
       <input type="text"
-      placeholder="JA VAD KAN DET VARA"
+      placeholder="Skriv ert svar här.."
       value= {firstAnswerValue}
       onChange={(e) => setFirstAnswerValue(e.target.value)}
       >
@@ -115,28 +150,15 @@ const Startpage = () => {
       >
       </input>
       
-      </div>
-       
-      </form>
-      : null }
-      <div className="revealAnswer">
-        <div className="response">
-          <p>{isResponse}</p>
-        
-        {revealLink ? <button>
-          <Link to="/first-quest">Gå vidare 
-          </Link>
-        </button> :null}
-        </div>
-        {isHidden ?
-        <h2 className="counter">
-          {isCounter}
-        </h2> :null }
-        </div>
-      </div>
-      </div>
       </span>
-    </div>
+      : null }
+      </form>
+  
+
+      </div>
+      </div>
+      </div>
+   </div>  
   </div> );
 }
  

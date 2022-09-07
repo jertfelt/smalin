@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Pacifico&display=swap');
+
+h1, h2 {
+  font-family: Pacifico;
+  }
+
+.bree{
+  font-family: Bree Serif;
+}
+
+.pacifico{
+  font-family: Pacifico;
+}
+
+.really-big-text{
+   font-size: 92px;
+   line-height:1rem;
+  
+    @include breakpoint(max-768){
+      font-size:70px;
+      line-height:1rem;
+    }
+    @include breakpoint(max-640){
+      font-size:50px;
+    }
+}
+
+.normal-text{
+  font-size:34px;
+}

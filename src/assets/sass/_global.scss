@@ -1,0 +1,21 @@
+
+body{
+  background-color: lavenderblush;
+  margin: 0 auto;
+}
+
+.img{
+  &--round{
+    border-radius: 50%;
+  }
+}
+.row{
+  @include flexBox(row, center, center);
+  @include breakpoint(max-768){
+    @include flexBox(column,center,space-around);
+  }
+  
+}
+.column{
+  @include flexBox(column,center,space-between)
+}
