@@ -81,7 +81,9 @@
     h3{
       line-height:3rem;
       @include breakpoint(max-640){
-        font-size:23px;
+        line-height:0;
+        float:left;
+        align-items: flex-start;
       }
     }
     label{
@@ -107,12 +109,13 @@
     }
     input[type=submit]:hover{
       background-color: pink;
-
+      
     }
     span{
       @include flexBox(row, center,space-between);
       @include breakpoint(max-640){
         flex-direction: column;
+       
         justify-content: space-between;
       }
     }

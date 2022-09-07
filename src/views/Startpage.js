@@ -24,7 +24,9 @@ const Startpage = () => {
     label:"lavenderblush",
   },
   { value: 2,
-  label: "lightcoral"}
+  label: "lightcoral"},
+  { value: 3, 
+  label: "pink"}
   ]
 
   const [bgColor, setBgColor] = useState(bgColors[0].label)
@@ -45,24 +47,30 @@ const Startpage = () => {
 
         if(firstAnswerValue !== rightAnswer) {
           setTries(tries + 1)
-         
-              // console.log(cluesArray)
+                    
         cluesArray.forEach(item => {
           if (item.id === tries+1){
-            console.log(item.clue)
-            
             setClue(item.clue)
           }
-         
         })
+        
+        let amountLeft = 5 - tries;
+        setIsCounter(` Försök kvar: ${amountLeft}`)
 
-          let amountLeft = 5 - tries;
+          switch(firstAnswerValue){
+            case "Gunterska": 
+              setIsResponse("Det var fel! Stavade ni rätt?")
+            break;
+            case "günterska":
+              setIsResponse("Det var fel! Stavade ni med stor bokstav?")
+            break;
+            case "gunterska":
+              setIsResponse("Det var fel! Stavade ni med stor bokstav? Och är U:et rätt?")
+            break;
+            default:
+          setIsResponse(`Det var fel!`)
+          }
           
-          setIsResponse(`Det var fel!
-          `)
-          setIsCounter(` Försök kvar: ${amountLeft}`)
-    
-    
           if(tries === 5){
             setIsResponse(`Attans! Ni kom inte på det! Messa Tova och fråga vart ni ska!`)
             setIsHidden(false)
@@ -78,6 +86,7 @@ const Startpage = () => {
           if(tries === 6){
             setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan ..")
           }
+          setBgColor(bgColors[2].label)
         }
      
       }
