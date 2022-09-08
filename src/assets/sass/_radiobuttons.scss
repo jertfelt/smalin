@@ -1,0 +1,63 @@
+.cc-selector{
+  
+  input{
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }
+
+} 
+
+.cc-selector-2{
+  input{
+    position:absolute;
+    z-index:999;
+  }
+} 
+
+.volvo{background-image:url(https://www.volvocars.com/images/v/-/media/project/contentplatform/data/media/heritagemodels/27_volvo244_large.jpg?h=1932&iar=0&w=4096);
+
+ }
+.ambulans{background-image:url(https://static-cdn.sr.se/images/125/cabed7b2-b396-4cc5-a683-cb743aca3db9.jpg);}
+.cykel{background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhe0TkLXKyi7QzYCsub8ctRhExn_GQFvCHO7YLqVwmNae1cc9z-UNo7WR5Kdh6_4wchLg&usqp=CAU)}
+.horse{background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToTEswa1Fp6WuwTmg6mVH9JypvsvFHBvNxB7MIE9g4_xYBqPqtIEuwaNkeWwx-IdBjcs8&usqp=CAU);}
+.brandbil{background-image: url(https://cdn.jdpower.com/dimensions%20of%20a%20firetruck.jpg);}
+
+.cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+  -webkit-filter: none;
+     -moz-filter: none;
+          filter: none;
+}
+.drinkcard-cc{
+  cursor:pointer;
+  background-size:cover;
+  background-repeat:no-repeat;
+  display:inline-block;
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+  margin:1rem;
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+          filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+  -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+          filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+* { font-family:monospace; }
+.cc-selector-2 input{ margin: 5px 0 0 12px; }
+.cc-selector-2 label{ margin-left: 7px; }
+span.cc{ color:#6d84b4 }

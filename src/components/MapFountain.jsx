@@ -1,11 +1,11 @@
 const MapFountain = () => {
 
-  return ( <div>
-    <h1>KOLLA VAD FUSKIGT, EN KARTA:</h1>
-    <p>Aja, ni ska hit:</p>
+  return ( 
+  <div>
+    <h1 className="bree">KOLLA VAD FUSKIGT, EN KARTA!?</h1>
+    <p className="normal-text bree">Aja, ni ska hit:</p>
     <iframe
-      width="600"
-      height="450"
+      
       style={{ border: 0 }}
       loading="lazy"
       title="map"
