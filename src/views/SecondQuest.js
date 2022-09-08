@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
 import MapThirdStop from "../components/MapThirdStop";
 
 const SecondQuest = (props) => {

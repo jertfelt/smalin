@@ -1,6 +1,11 @@
+p{
+  font-family: Bree serif;
+}
+
 
 .welcome{
   display:block;
+  
   padding: 3rem;
   @include breakpoint(max-768){
     padding:1rem;
@@ -146,7 +151,7 @@
   }
 
   button {
-    background-color: pink;
+    
     border:none;
     padding:2rem;
     
@@ -161,7 +166,7 @@
   button:hover{
     background-color: black;
     a{
-      color:antiquewhite;
+      color:black;
     }
   }
   button:active{
@@ -170,3 +175,6 @@
   }
 }
 
+.sendButton{
+  background-color: black;
+}

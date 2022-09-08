@@ -48,10 +48,10 @@ const FirstQuest = () => {
   const ambulans = require("../assets/amb_VW_Crafter_-2020_UL.jpg");
   
   return ( 
-  <div>
-    <h1 className="really-big-text" >Första etappen:</h1>
+  <div className="firstQuest">
+    <h1 className="really-big-text">Första etappen:</h1>
     <span className="firstQuest--firstSpan">
-      <p className="bree normal-text">Ni ska träffa en speciell person på Güntherska. Denna person kommer ge er ett uppdrag. När ni är färdiga med uppdraget, fyll i nedan formulär: </p>
+      <p className="slightly-morenormal">Ni ska träffa en speciell person på Güntherska. Denna person kommer ge er ett uppdrag. När ni är färdiga med uppdraget, fyll i nedan formulär: </p>
     </span>
     {showResults ?
     <div className="reveal--answer reveal--right above">

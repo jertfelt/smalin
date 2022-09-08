@@ -1,6 +1,5 @@
-import {Link} from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import MapFourthStop from "../components/MapFourthStop";
 
 const ThirdStop = () => {
   const [rightAnswer, setRightAnswer] = useState("");
@@ -9,7 +8,19 @@ const ThirdStop = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [errBackground, setErrBackground] = useState(false)
   const [ErrMsg, setErrMsg] = useState("");
-  const [selected, setSelected] = useState("");
+
+  const options = [
+    {value: "", text:"Välj färg", style: ""},
+    {value: "röd", text: "Jättemycket Röd"},
+    {value: "nattsvart", text: "Nattsvart"},
+    {value: "turkos", text: "Turkos"},
+    {value: "grisrosa", text: "Grisrosa"},
+    {value: "vinröd", text: "Vinröd"},
+    {value: "kornblå", text: "Kornblå"},
+    {value: "guld", text: "Guld"}
+   ];
+
+  const [selected, setSelected] = useState(options[0].value);
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -17,6 +28,13 @@ const ThirdStop = () => {
    const handleMouseOut = () => {
     setIsHovering(false);
    }
+
+   const handleChange = e => {
+    console.log(e.target.value);
+    setSelected(e.target.value);
+   }
+
+   
 
   useEffect(() => {
     fetch("../data/passwords.json", {
@@ -50,9 +68,8 @@ const ThirdStop = () => {
 
   const checkPassword = (e) => {
     e.preventDefault();
-    console.log(`Event: '${e.target.value}'`)
-   
     console.log(selected)
+
     if (selected.toUpperCase() === rightAnswer){
       setErrBackground(false);
       setErrMsg("");
@@ -62,7 +79,6 @@ const ThirdStop = () => {
     else {
       setErrBackground(true)
       setErrMsg("Fel svar")
-      
     }
    
   }
@@ -70,7 +86,8 @@ const ThirdStop = () => {
   return ( 
   <div className="thirdStop"
   style={{
-    backgroundColor: errBackground ? "salmon" : "", 
+    backgroundColor: errBackground ? ["salmon"] : "",
+    
     color: errBackground ? "black" : "",
   }}>
     <h1 className="really-big-text">Tredje stoppet:</h1>
@@ -78,52 +95,31 @@ const ThirdStop = () => {
         <>
         <span>
         <h2 className="denied bree normal-text">Access denied!</h2>
-          
-          <form onSubmit={checkPassword}
-          className="thirdStop__form">
-          <label className="bree normal-text"> Vad är lösenordet? </label>
-          <select 
-          value= {selected}
-          onChange={e =>setSelected(e.target.value)}
-          name="pickColor">
-            <option 
-            style ={{backgroundColor:"rgb(84, 28, 28)",
-            color:"white"}}
-            value="Vinröd">Vinröd</option>
-            <option onChange={e =>setSelected(e.target.value)}
-            style ={{backgroundColor:"aqua",
-            color:"black"}}
-            value="Turkos">Turkos</option>
-            <option onChange={e =>setSelected(e.target.value)}
-             style ={{backgroundColor:"peachpuff",
-             color:"black"}}value="Grisrosa">Grisrosa</option>
-            <option onChange={e =>setSelected(e.target.value)}
-            style ={{backgroundColor:"purple",
-            color:"white"}}
-            value="Lila">Lila</option>
-            <option onChange={e =>setSelected(e.target.value)}
-            style ={{backgroundColor:"black",
-            color:"white"}}
-            value="Svart">Svart</option>
-            <option onChange={e =>setSelected(e.target.value)}
-            style ={{backgroundColor:"red",
-            color:"white"}}
-             value="Röd">Röd</option>
-              <option onChange={e=>setSelected(e.target.value) }
-            style ={{backgroundColor:"goldenrod",
-            color:"black"}}
-             value="Guld">Guld</option>
+        <form onSubmit={checkPassword}
+        className="thirdStop__form">
+          <select value={selected} onChange={handleChange}>
+            {options.map(option => (
+              <option key={option.value}
+              value={option.value}>
+                {option.text}
+              </option>
+            ))}
           </select>
           <input type="submit"
             className="bree"
             value="Skicka"></input>
-          </form>
+        </form>
+
           <div>
-          <h3> {ErrMsg}</h3> 
+          <h2 className="really-big-text"> {ErrMsg}</h2> 
           </div>
         </span>
-        
         </> :null}
+        {showThirdMap ? 
+        <article className="mapcontainer bree">
+          <MapFourthStop />
+
+        </article>:null}
   </div> );
 }
  

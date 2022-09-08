@@ -94,7 +94,7 @@ const Startpage = () => {
 
 
   return ( 
-  <div className="welcome"
+  <div className="welcome "
   style={{ backgroundColor: bgColor, width: "100%", height: "100%"}}>
     <h1 className="really-big-text">Välkomna!</h1>
     <div className="welcome--txt bree normal-text">

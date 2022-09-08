@@ -1,4 +1,6 @@
 .firstQuest{
+ padding:1rem;
+
   &--firstSpan{
     display:block;
     padding:2rem;
@@ -15,52 +17,9 @@
       font-family: Bree Serif;
       text-align: center;
     }
-    select{
-      border:none;
-      background-color: whitesmoke;
-      width: 100%;
-      padding:10px;
-      font-size:20px;
-      font-family: Bree Serif;
-    
+    input[type="submit"]{ 
+      color: whitesmoke;
     }
-    select:hover{
-      background-color:black;
-      color:whitesmoke;
-    }
-    input[type="text"]{
-      border:none;
-      background-color: whitesmoke;
-      width: 90%;
-      padding:10px;
-      font-size:20px;
-      font-family: Bree Serif;
-    }
-    input[type="submit"]{
-      margin-top:3rem;
-      border:none;
-      background-color: whitesmoke;
-      width: 50%;
-      
-      border-radius: 19px;
-      padding:10px;
-      font-size:30px;
-      font-family: Bree Serif;
-      background-color: black;
-      color:antiquewhite;
-      @include breakpoint(max-768){
-        font-size:20px;
-      }
-    }
-    input[type="submit"]:hover{
-      background-color: palevioletred;
-      color:antiquewhite;
-    }
-    input[type="submit"]:active{
-      background-color: antiquewhite;
-      color:black;
-    }
-    
   }
 }
 
@@ -91,7 +50,7 @@
     }
   }
   &__revealed{
-    &--ozelot{}
+    
     &--container{
       display:block;
       padding-top:3em;
@@ -282,4 +241,20 @@
 
 .thirdStop{
  padding:2rem;
+ h1{
+  margin-bottom:1em;
+ }
+ &__form{
+  @include flexBox(column,center,space-around);
+  select{
+    background-color: pink;
+    color:black;
+  }
+ 
+  input[type="submit"]{
+    margin-top:1rem;
+    color: white;
+  }
+ }
 }
+

@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 h1, h2 {
   font-family: Pacifico;
   }
 
 .bree{
-  font-family: Bree Serif;
+  font-family: MerriWeather, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pacifico{
@@ -27,6 +28,9 @@ h1, h2 {
 
 .normal-text{
   font-size:34px;
+}
+.slightly-morenormal{
+  font-size:20px;
 }
 
 .error{
