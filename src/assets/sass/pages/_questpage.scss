@@ -64,6 +64,122 @@
   }
 }
 
+.denied{
+  color:whitesmoke;
+  background-color: black;
+  text-align: center;
+  padding:10px;
+}
+
+.secondQuest{
+  padding:1rem;
+  
+  
+  &__password{
+    input[type="text"]{
+      background-color: antiquewhite;
+      border:none;
+      padding:4px;
+      margin-right:1rem;
+    }
+    input[type="submit"]{
+      background-color: black;
+      color:whitesmoke;
+      padding: 4px 4px;
+      border:none;
+      margin-right:1rem;
+    }
+  }
+  &__revealed{
+    &--ozelot{}
+    &--container{
+      display:block;
+      padding-top:3em;
+
+      img{
+       border-radius: 50%;
+       max-height: 300px; 
+       max-width: 300px;
+       display:block;
+       margin: 0 auto;
+       margin-top:2rem;
+      }
+      button{
+        cursor: pointer;
+        margin:1rem;
+        padding:10px;
+        border-radius: 9px;
+        background-color: pink;
+        font-size:20px;
+        font-family: Bree Serif;
+        a{
+          font-family: Bree Serif;
+          color:black;
+        }
+      }
+      button:hover{
+        transform: rotate(3deg);
+      }
+      button:active{
+        background-color: white;
+      }
+      button{
+        @include breakpoint(max-640){
+          display:flex;
+          flex-direction: column;
+        }
+      }
+      button:hover{
+        background-color: whitesmoke;
+      }
+    }
+  }
+}
+
+.mapcontainer{
+  
+  h2{
+    line-height: 1em;
+    flex-wrap: wrap;
+  }
+  iframe{
+     width:100%;
+     height:500px;
+    }
+}
+
+.ozelot{
+  position: relative;
+	background: #ffffff;
+	border-radius: .4em;
+  width:200px;
+  margin: 0 auto;
+  h2{
+    font-size:40px;
+    text-align: center;
+  }
+  &--wrapper{
+    position: relative;
+    top:-8rem;
+    
+    margin-bottom:-7rem;
+  }
+}
+.ozelot:after{
+  content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0px;
+	height: 0;
+	border: 40px solid transparent;
+	border-bottom-color: #ffffff;
+	border-top: 0;
+	border-left: 0;
+	margin-left: -20px;
+	margin-top: -40px;
+}
+
 .reveal{
  
   &--right{
@@ -162,3 +278,5 @@
     margin-left:4px;
   }
  }
+
+

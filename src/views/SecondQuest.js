@@ -8,6 +8,14 @@ const SecondQuest = (props) => {
   const [password, setPassword] = useState("")
   const [rightAnswer, setRightAnswer] = useState("")
   const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+   }
+   const handleMouseOut = () => {
+    setIsHovering(false);
+   }
 
   useEffect(() => {
     fetch("../data/passwords.json", {
@@ -32,8 +40,6 @@ const SecondQuest = (props) => {
       if(item.id === 2){
         setRightAnswer(item.word)
       }
-
-     
     })
     
     
@@ -48,10 +54,11 @@ const SecondQuest = (props) => {
 
   const checkPassword = (e) => {
   e.preventDefault();
-  if (password === ""){
+  
+  if (password.toUpperCase() === ""){
      setPasswordErrorMsg("Ni måste fylla i fältet. Det bör inte vara så svårt.")
   }
-  else if(password === rightAnswer){
+  else if(password.toUpperCase() === rightAnswer){
      setPasswordErrorMsg("");
      setShowSecondPage(true);
      setPasswordPrompt(false);
@@ -61,56 +68,59 @@ const SecondQuest = (props) => {
      setPasswordErrorMsg("Vad puttenuttigt... MEN DET ÄR FEL");
   }
  }
- 
- const closeMap = () => {
 
- }
 
-  return ( <div className="second-quest">
+  return ( <div className="secondQuest">
     <div>
       <article>
         <h1 className="really-big-text" >Andra etappen:</h1>
         {hidePasswordPrompt ?
+        <>
         <span>
-           <span>
-        <h2>Access denied!</h2>
-          <p className="Bree font--20">
+        <h2 className="denied bree">Access denied!</h2>
+          <p className="bree">
             Vad är lösenordet?
           </p>
           <form onSubmit={checkPassword}
-          className="password">
+          className="secondQuest__password">
             <input type="text"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Gissa? Pfft.">
             </input>
             <input type="submit"
-            className="sendFirst Bree"
+            className="sendFirst bree"
             value="Skicka"></input>
           </form>
           <div>
-          <h2> {passwordErrorMsg}</h2> 
+          <h3> {passwordErrorMsg}</h3> 
           </div>
-    </span>
+        </span>
         
-        </span> :null}
+        </> :null}
      
 
       {showSecondPage ?
-      <article className="revealedSecond">
-        <h2 className="Bree">Dags att bli farliga</h2>  
-        <div className="second-quest-container">
+      <article className="secondQuest__revealed">
+        <div className="secondQuest__revealed--container">
+          <div className="secondQuest__revealed--ozelot">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Ocelot_%28Leopardus_pardalis%29-8.jpg"
           alt="En ozelot!"
-          className="img--round"></img>
-        <div className="mapContainer--notabove Bree">
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          />
+          {isHovering && (
+            <div className="ozelot--wrapper">
+            <div className="ozelot">
+              <h2>Mwrello!</h2>
+         
+              </div>
+              </div>
+          )}
+          </div>
+        <div className="mapcontainer bree">
           <MapThirdStop />
-        <button onClick={closeMap}> Stäng kartan!</button>
-        <button className="next Bree"> <Link  to="/third-stop">Framme? Klicka här!
-          </Link></button>
-
         </div>
-      
         </div>
       </article> :null}
       </article>
