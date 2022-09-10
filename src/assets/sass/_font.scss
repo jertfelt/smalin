@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Pacifico&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-h1, h2 {
-  font-family: Pacifico;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Piazzolla:ital,opsz,wght@0,8..30,100;0,8..30,200;0,8..30,300;0,8..30,400;0,8..30,500;0,8..30,600;0,8..30,700;0,8..30,800;0,8..30,900;1,8..30,100;1,8..30,200;1,8..30,300;1,8..30,400;1,8..30,500;1,8..30,600;1,8..30,700;1,8..30,800;1,8..30,900&display=swap');
 
-.bree{
-  font-family: MerriWeather, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
 .pacifico{
   font-family: Pacifico;
 }
 
+.bree{
+  font-family: MerriWeather, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.kaushan{
+  font-family: Kaushan Script;
+}
+
+.uncial{
+  font-family: Uncial Antiqua;
+}
 .really-big-text{
    font-size: 92px;
    line-height:1rem;

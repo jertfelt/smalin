@@ -79,12 +79,12 @@ const Startpage = () => {
         }
         else if(firstAnswerValue === rightAnswer){
           setTries(tries +1)
-          setIsResponse("Rätt svar! Ses på Güntherska klockan 12.10. Klicka på knappen nedan för att gå till nästa steg!")
+          setIsResponse("Rätt svar! Ses på Güntherska klockan 12.10. Klicka på knappen nedan för att gå till nästa steg! OBS: Ni får bara klicka på knappen när ni är på plats.")
           setRevealLink(true);
        
           setIsHidden(false)
           if(tries === 6){
-            setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan ..")
+            setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan 12.10.OBS: Ni får bara klicka på knappen nedan när ni är på plats.")
           }
           setBgColor(bgColors[2].label)
         }
@@ -96,7 +96,7 @@ const Startpage = () => {
   return ( 
   <div className="welcome "
   style={{ backgroundColor: bgColor, width: "100%", height: "100%"}}>
-    <h1 className="really-big-text">Välkomna!</h1>
+    <h1 className="pacifico really-big-text">Välkomna!</h1>
     <div className="welcome--txt bree normal-text">
       <img src="https://scontent-arn2-2.xx.fbcdn.net/v/t31.18172-8/18076700_10154425240715069_8532404569105354063_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EC-zFmWbtlkAX-AFvoO&_nc_ht=scontent-arn2-2.xx&oh=00_AT8S3siac24omVeGREKGwMl61QrgXy7FKtEvEgApznpNLg&oe=63350907"
       alt="Simon och Malin firar jul"
@@ -139,7 +139,7 @@ const Startpage = () => {
           </Link>
         </button> :null}
         {isHidden ?
-        <h2>
+        <h2 className="pacifico">
           {isCounter}
         </h2> :null }
         </div>

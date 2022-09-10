@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
 import MapFountain from "../components/MapFountain";
+import CharacterSheet from "../components/CharacterSheet";
+import Characters from "../components/Characters"
+import FountainQuiz from "../components/FountainQuiz";
+
 const FirstQuest = () => {
   const [showResults, setShowResults] = useState(false);
   const [showMap, setShowMap] = useState(false);
@@ -49,13 +53,19 @@ const FirstQuest = () => {
   
   return ( 
   <div className="firstQuest">
-    <h1 className="really-big-text">Första etappen:</h1>
+    <h1 className="really-big-text uncial antiqua">Första etappen:</h1>
     <span className="firstQuest--firstSpan">
-      <p className="slightly-morenormal">Ni ska träffa en speciell person på Güntherska. Denna person kommer ge er ett uppdrag. När ni är färdiga med uppdraget, fyll i nedan formulär: </p>
+      <p className="slightly-morenormal ">Nu börjar äventyret!</p>
+      <p className="slightly-morenormal" >Klicka på knappen för att få era stats (obs, en i taget)</p>
     </span>
+    <Characters>
+
+    </Characters>
+
+
     {showResults ?
     <div className="reveal--answer reveal--right above">
-      <h2 className="really-big-text">Ni svarade: </h2>
+      <h2 className="pacifico really-big-text">Ni svarade: </h2>
       <h3 className="normal-text">
         {fordon}, {fontValue}, {synonym}
       </h3>
@@ -191,7 +201,7 @@ const FirstQuest = () => {
     <input type="submit" 
     value="Smäll iväg svaren"/>
   </form>
-  <div class="reveal--answer">
+  <div className="reveal--answer">
   <p className="bree error">{errormessage}</p>
   </div>
   
