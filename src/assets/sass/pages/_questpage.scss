@@ -8,8 +8,8 @@
     
   }
   &--form{
+    margin-top:2em;
     padding:2rem;
- 
     background-color: pink;
     @include flexBox(column,center, center);
     h3{
@@ -17,8 +17,34 @@
       font-family: Bree Serif;
       text-align: center;
     }
-    input[type="submit"]{ 
+    select{
+      background-color: black;
+      padding:10px;
+      font-family: Uncial Antiqua;
+      border:none;
+      font-size:20px;
       color: whitesmoke;
+      display:block;
+      margin: 0 auto;
+    }
+    input[type="text"]{
+      background-color: antiquewhite;
+      border:1px solid;
+      font-size:20px;
+      padding:1rem;
+      display: block;
+      margin: 0 auto;
+      font-family: Bree Serif;
+    }
+    
+    input[type="submit"]{ 
+      background-color: black;
+      padding:10px;
+      font-family: Uncial Antiqua;
+      border:none;
+      font-size:30px;
+      color: whitesmoke;
+      margin-top:2em;
     }
   }
 }
@@ -32,11 +58,15 @@
 
 .secondQuest{
   padding:1rem;
+  background-color: antiquewhite;
+  min-height: 190vh;
   
   
   &__password{
     input[type="text"]{
-      background-color: antiquewhite;
+      background-color: white;
+      font-size: large;
+      font-family: MerriWeather;
       border:none;
       padding:4px;
       margin-right:1rem;
@@ -44,9 +74,15 @@
     input[type="submit"]{
       background-color: black;
       color:whitesmoke;
-      padding: 4px 4px;
+      font-size: large;
+      padding: 4px 6px;
       border:none;
       margin-right:1rem;
+    }
+    input[type="submit"]:hover{
+      background-color: pink;
+      color:black;
+
     }
   }
   &__revealed{
@@ -58,10 +94,11 @@
       img{
        border-radius: 50%;
        max-height: 300px; 
-       max-width: 300px;
+       max-width: 400px;
        display:block;
        margin: 0 auto;
-       margin-top:2rem;
+       margin-bottom:5em;
+       
       }
       button{
         cursor: pointer;
@@ -140,6 +177,10 @@
 }
 
 .reveal{
+  &--error{
+    padding:4rem;
+
+  }
  
   &--right{
    padding: 3rem;
@@ -171,9 +212,9 @@
 
   &__map{
     background-color: black;
-    padding:1rem;
+    padding:2rem;
     width:100%;
-    margin-left:-3rem;
+    margin-left:-4rem;
     margin-top:-1rem;
     z-index:20;
     position: absolute;
@@ -191,6 +232,8 @@
      height:500px;
     }
     button{
+      border:none;
+
       @include breakpoint(max-640){
         display:flex;
         flex-direction: column;
@@ -198,6 +241,7 @@
     }
     button:hover{
       background-color: whitesmoke;
+     
     }
   }
 
@@ -241,20 +285,113 @@
 
 .thirdStop{
  padding:2rem;
+ min-height: 190vh;
+
+ &__map{
+  max-width:90%;
+  button{
+    cursor: pointer;
+    margin:1rem;
+    padding:10px;
+    border-radius: 9px;
+    background-color: pink;
+    font-size:20px;
+    font-family: Bree Serif;
+    a{
+      font-family: Bree Serif;
+      color:black;
+    }
+  }
+  button:hover{
+    transform: rotate(3deg);
+  }
+  button:active{
+    background-color: white;
+  }
+ }
+
+ &__clues{
+
+  &--img{
+    max-width: 40%;
+  }
+ 
+    
+    padding:2rem;
+    width:50%;
+    button{
+      background-color: turquoise;
+      border:none;
+      font-weight: bold;
+      margin-top:1rem;
+      margin-bottom:1rem;
+      font-family: Merriweather;
+      padding:1rem;
+      cursor: pointer;
+    }
+    p{
+      font-size:24px;
+    }
+   
+
+ }
+
+ &__treasure{
+  z-index:90;
+  min-height: 190vh;;
+  background-color: black;
+  color:white;
+  width:100%;
+  position: absolute;
+  top:0;
+  padding:3rem;
+  margin-left:-3rem;
+  img{
+    max-width: 100%;
+    min-width:400px;
+    border-radius:9px;
+    margin-bottom:2em;
+    margin-top:1em;
+  }
+
+ }
+
  h1{
   margin-bottom:1em;
+  
  }
  &__form{
+ 
+  width:100%;
   @include flexBox(column,center,space-around);
   select{
     background-color: pink;
     color:black;
+    padding:2rem;
+    font-size:20px;
+    border:none;
+    border-radius: 9px;
+    font-family: MerriWeather;
   }
  
   input[type="submit"]{
     margin-top:1rem;
-    color: white;
+    border-radius: 9px;
+    background-color: black;
+    color:white;
+    border:none;
+    padding:2rem;
+    font-size:20px;
   }
  }
 }
 
+
+
+.fact{
+  li{
+    list-style-type: none;
+    margin-top:10px;
+    padding-right:2em;
+  }
+}

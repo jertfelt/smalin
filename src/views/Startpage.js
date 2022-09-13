@@ -79,12 +79,12 @@ const Startpage = () => {
         }
         else if(firstAnswerValue === rightAnswer){
           setTries(tries +1)
-          setIsResponse("Rätt svar! Ses på Güntherska klockan 12.10. Klicka på knappen nedan för att gå till nästa steg! OBS: Ni får bara klicka på knappen när ni är på plats.")
+          setIsResponse("Rätt svar! Ses på Güntherska klockan 12.10. Klicka på knappen nedan för att gå till nästa steg! OBS: Klicka bara på knappen när ni är på plats.")
           setRevealLink(true);
        
           setIsHidden(false)
           if(tries === 6){
-            setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan 12.10.OBS: Ni får bara klicka på knappen nedan när ni är på plats.")
+            setIsResponse("Rätt svar! På sista försöket? Najs. Ses där klockan 12.10. OBS: Ni får bara klicka på knappen nedan när ni är på plats.")
           }
           setBgColor(bgColors[2].label)
         }
@@ -113,7 +113,7 @@ const Startpage = () => {
         </span>
         <span className="">
           <h3>Hur?</h3>
-          <p>Ta med er mobil, glatt humör. Färda er kollektivt, alternativt cykel. Ingen bil!</p>
+          <p>Ta med er mobil, hjärna, glatt humör. Färda er kollektivt, alternativt cykel. Ingen bil!</p>
         </span>
         
       </span>
@@ -128,13 +128,13 @@ const Startpage = () => {
         <h3 className="pacifico">Var?</h3>
         <p className="clue">{clue}</p>
         </span>
-       <h3>Vad heter stället dit ni ska?</h3>
-      <label>Skriv in vad ni tror att det är, ni har fem försök på er:</label>
+       <h3 className="bree">Vad heter stället dit ni ska?</h3>
+      <label className="bree">Skriv in vad ni tror att det är, ni har fem försök på er:</label>
       </> 
       : null }
       <div className="revealAnswer--start">
           <p>{isResponse}</p>
-        {revealLink ? <button>
+        {revealLink ? <button className="next">
           <Link to="/first-quest">Gå vidare 
           </Link>
         </button> :null}
@@ -150,11 +150,12 @@ const Startpage = () => {
       <input type="text"
       placeholder="Skriv ert svar här.."
       value= {firstAnswerValue}
+      className="bree"
       onChange={(e) => setFirstAnswerValue(e.target.value)}
       >
       </input>
       <input type="submit"
-      className="sendButton"
+      className="bree"
       value="SVARA!"
       >
       </input>

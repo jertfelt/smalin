@@ -44,3 +44,37 @@
 //   background-color: antiquewhite;
 //   color:black;
 // }
+
+
+
+.thirdoption{
+ 
+  &--red{
+    background-color: red;
+    color: white;
+  }
+  &--white{
+    color: white;
+  }
+  &--midnightblue{
+    background-color: midnightblue;
+    color: white;
+  }
+  &--turqoise{
+    background-color: mediumaquamarine;
+    color: black;
+   
+  }
+  
+  &--darkred{
+    background-color: darkred;
+    color: white;
+  }
+  &--blue{
+    background-color: blue;
+    color:white;
+  }
+  &--gold{
+    background-color: goldenrod;
+  }
+}

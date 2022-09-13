@@ -1,0 +1,55 @@
+.firstQuest{
+  background-color: antiquewhite;
+  font-family: Merriweather;
+}
+
+.characterButt{
+  background-color: black;
+  border:none;
+  padding:2rem;
+  border-radius: 19px;
+  color:antiquewhite;
+  font-weight: bold;
+  font-size:20px;
+  font-family: Merriweather;
+}
+
+.characterRenderStats{
+  &__meddelande{
+    padding:4px;
+    margin-top:-3rem;
+    margin-bottom:2em;
+  }
+}
+
+.dice{
+  &__content{
+    padding:2rem;
+    
+  }
+  &__container{
+    margin-top:10px;
+    img{
+      margin:10px;
+    }
+   
+  }
+  &__button{
+    background-color: black;
+    color:white;
+    font-family: Merriweather;
+    cursor: pointer;
+    border:none;
+    padding:6px;
+    font-size:20px;
+  }
+  &__result{
+    background-color: black;
+    width:90%;
+    color: white;
+    padding:1rem;
+    h2{
+      width:50%;
+    }
+  }
+}

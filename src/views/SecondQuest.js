@@ -69,10 +69,11 @@ const SecondQuest = (props) => {
  }
 
 
-  return ( <div className="secondQuest">
+  return ( 
+  <div className="secondQuest">
     <div>
       <article>
-        <h1 className="really-big-text" >Andra etappen:</h1>
+        <h1 className="really-big-text uncial" >Andra etappen:</h1>
         {hidePasswordPrompt ?
         <>
         <span>
@@ -92,7 +93,7 @@ const SecondQuest = (props) => {
             value="Skicka"></input>
           </form>
           <div>
-          <h3> {passwordErrorMsg}</h3> 
+          <h3 className="bree"> {passwordErrorMsg}</h3> 
           </div>
         </span>
         
@@ -103,8 +104,8 @@ const SecondQuest = (props) => {
       <article className="secondQuest__revealed">
         <div className="secondQuest__revealed--container">
           <div className="secondQuest__revealed--ozelot">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Ocelot_%28Leopardus_pardalis%29-8.jpg"
-          alt="En ozelot!"
+          <img src="https://media3.giphy.com/media/29HQJQI4r3XI749JyH/giphy.gif"
+          alt="En tiger!"
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           />

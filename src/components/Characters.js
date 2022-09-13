@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+
 import CharacterMalin from "./CharacterMalin";
 
 
 const Characters = () => {
-
-
   let statsArr = [
     {
     "id": 1,
@@ -35,7 +33,7 @@ const Characters = () => {
     <CharacterMalin
     arr={statsArr}>
     </CharacterMalin>
- 
+    
   </div>  );
 }
  

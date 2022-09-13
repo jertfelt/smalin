@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
 import MapFountain from "../components/MapFountain";
-import CharacterSheet from "../components/CharacterSheet";
+
 import Characters from "../components/Characters"
-import FountainQuiz from "../components/FountainQuiz";
+
 
 const FirstQuest = () => {
   const [showResults, setShowResults] = useState(false);
@@ -32,7 +32,7 @@ const FirstQuest = () => {
         setErrorMessage("")
       }
       else {
-        setErrorMessage("Hm. Vilket fordon var det nu igen som ni skulle välja?")
+        setErrorMessage("Ledtråd: Vilket fordon var det som Simon fick se insidan av för inte så länge sen?")
       }
     }
    
@@ -53,23 +53,19 @@ const FirstQuest = () => {
   
   return ( 
   <div className="firstQuest">
-    <h1 className="really-big-text uncial antiqua">Första etappen:</h1>
-    <span className="firstQuest--firstSpan">
-      <p className="slightly-morenormal ">Nu börjar äventyret!</p>
-      <p className="slightly-morenormal" >Klicka på knappen för att få era stats (obs, en i taget)</p>
-    </span>
-    <Characters>
-
-    </Characters>
-
+    <h1 className="really-big-text uncial">Första etappen:</h1>
+      <p className="normal-text ">Nu börjar äventyret!</p>
+    
+    <Characters/>
 
     {showResults ?
     <div className="reveal--answer reveal--right above">
-      <h2 className="pacifico really-big-text">Ni svarade: </h2>
+      <h2 className="uncial really-big-text">
+        Ni svarade: </h2>
       <h3 className="normal-text">
         {fordon}, {fontValue}, {synonym}
       </h3>
-      <h2 className="really-big-text">De rätta svaren är:
+      <h2 className=" uncial really-big-text">De rätta svaren är:
       </h2>
       <span>
         <h3>1. Typsnitt: {svar1}</h3>
@@ -82,6 +78,7 @@ const FirstQuest = () => {
           </span>
       </span>
       <span className="reveal__buttonList">
+      
       <h3 className="bree">Kan ni lista ut vart ni ska nu? Annars kika här:</h3>
       <button onClick={revealMap} className="bree" >Kolla kartan</button>
       {showMap ? 
@@ -107,13 +104,15 @@ const FirstQuest = () => {
     :null}
    
     <form onSubmit={checkForAnswers}
-    className="firstQuest--form pacifico">
+    className="firstQuest--form ">
       <span>
       <label>
-        <h3>Vad är synonymt för ordet FORTFARANDE?</h3></label>
+        <h3>Vad är synonymt för ordet FORTFARANDE?</h3>
+      </label>
       <select 
       onChange={e => setSynonymValue(e.target.value)}
       name="synonym">
+        <option value="">Välj något</option>
         <option value="Snabb">Snabb</option>
         <option value="Pågå">Pågå</option>
         <option value="Ännu">Än</option>
@@ -201,8 +200,8 @@ const FirstQuest = () => {
     <input type="submit" 
     value="Smäll iväg svaren"/>
   </form>
-  <div className="reveal--answer">
-  <p className="bree error">{errormessage}</p>
+  <div className="reveal--error">
+  <p className="error uncial">{errormessage}</p>
   </div>
   
   

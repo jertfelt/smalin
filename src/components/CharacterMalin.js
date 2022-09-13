@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-
+import TableCharacter from "./TableCharacter"
 
 const CharacterMalin = ({arr}) => {
 
@@ -147,25 +147,23 @@ const [showStats, setShowStats] = useState(false);
 
   return ( 
   <div>
-    <button onClick={updateState}>Klicka här!</button>
+    <button className="characterButt"
+    onClick={updateState}>Klicka här!</button>
      
     <span className="container">
    
       <div className="character__grid">
       {showStats && <>
-      {malinArr.map((item)=> (
-        <article className="character__sheet"
-      key={item.id}>
-      <h2>{item.name}</h2>
-      <h3>Hälsa: {item.hälsa}</h3>
-      <h3>Intelligens: {item.intelligens}</h3>
-      <h3>Styrka: {item.styrka}</h3>
-      <h3>Humor: {item.humor}</h3>
-      <h3>Streetsmartness: {item.streetsmartness}</h3>
-      </article>
-      ))}
+      <TableCharacter
+      array= {malinArr}
+      title = {"Era stats:"}
+      >
+
+      </TableCharacter>
+     
       </>
       }
+      
       </div>
   </span>
 

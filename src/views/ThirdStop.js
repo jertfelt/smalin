@@ -1,40 +1,31 @@
 import { useEffect, useState } from "react";
-import MapFourthStop from "../components/MapFourthStop";
+
+import GuessNextStep3 from "../components/GuessNextStep3";
 
 const ThirdStop = () => {
   const [rightAnswer, setRightAnswer] = useState("");
   const [showPrompt, setPrompt] = useState(true);
   const [showThirdMap, setThirdMap] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+
   const [errBackground, setErrBackground] = useState(false)
   const [ErrMsg, setErrMsg] = useState("");
 
   const options = [
-    {value: "", text:"Välj färg", style: ""},
-    {value: "röd", text: "Jättemycket Röd"},
-    {value: "nattsvart", text: "Nattsvart"},
-    {value: "turkos", text: "Turkos"},
-    {value: "grisrosa", text: "Grisrosa"},
-    {value: "vinröd", text: "Vinröd"},
-    {value: "kornblå", text: "Kornblå"},
-    {value: "guld", text: "Guld"}
+    {value: "", text:"Välj färg", color: "white"},
+    {value: "röd", text: "Jättemycket Röd", color:"red", txtcolor: "white"},
+    {value: "nattsvart", text: "Nattsvart", color: "midnightblue", txtcolor: "white"},
+    {value: "turkos", text: "Turkos", color: "turqoise", txtcolor: "black"},
+    {value: "vinröd", text: "Vinröd", color: "darkred", txtcolor: "white"},
+    {value: "kornblå", text: "Kornblå", color: "blue", txtcolor: "white"},
+    {value: "guld", text: "Guld", color:"gold", txtcolor: "black"}
    ];
 
-  const [selected, setSelected] = useState(options[0].value);
+   const [selected, setSelected] = useState(options[0].value);
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
-   }
-   const handleMouseOut = () => {
-    setIsHovering(false);
-   }
 
    const handleChange = e => {
-    console.log(e.target.value);
     setSelected(e.target.value);
    }
-
-   
 
   useEffect(() => {
     fetch("../data/passwords.json", {
@@ -68,8 +59,7 @@ const ThirdStop = () => {
 
   const checkPassword = (e) => {
     e.preventDefault();
-    console.log(selected)
-
+  
     if (selected.toUpperCase() === rightAnswer){
       setErrBackground(false);
       setErrMsg("");
@@ -78,7 +68,28 @@ const ThirdStop = () => {
     }
     else {
       setErrBackground(true)
-      setErrMsg("Fel svar")
+      switch(selected.toUpperCase()){
+        case "KORNBLÅ":
+       setErrMsg("Konstigt namn va? Kornblått. Vad har korn med det blåa att göra? Gissa igen.")
+        break;
+        case "GULD":
+          setErrMsg("Nästan rätt!")
+
+        break;
+        case "RÖD":
+          setErrMsg("Rött är rätt förutom när det är fel. Try again.")
+        break;
+        case "NATTSVART":
+          setErrMsg("Ja så är känslan efter valet iallafall, men det är FEL SVAR")
+        break;
+        case "VINRÖD":
+          setErrMsg("Detta är ju DANIELS favoritfärg")
+        break;
+        default:
+        setErrMsg("Hallå? Varför har ni inte valt något?")
+      }
+      
+   
     }
    
   }
@@ -86,11 +97,11 @@ const ThirdStop = () => {
   return ( 
   <div className="thirdStop"
   style={{
-    backgroundColor: errBackground ? ["salmon"] : "",
+    backgroundColor: errBackground ? "salmon" : "antiquewhite",
     
     color: errBackground ? "black" : "",
   }}>
-    <h1 className="really-big-text">Tredje stoppet:</h1>
+    <h1 className="really-big-text uncial">Tredje stoppet:</h1>
     {showPrompt ?
         <>
         <span>
@@ -100,7 +111,9 @@ const ThirdStop = () => {
           <select value={selected} onChange={handleChange}>
             {options.map(option => (
               <option key={option.value}
-              value={option.value}>
+              className={`thirdoption--${option.color}`} 
+              value={option.value}
+              >
                 {option.text}
               </option>
             ))}
@@ -111,15 +124,15 @@ const ThirdStop = () => {
         </form>
 
           <div>
-          <h2 className="really-big-text"> {ErrMsg}</h2> 
+          <h2 className="really-big-text bree"> {ErrMsg}</h2> 
           </div>
         </span>
         </> :null}
         {showThirdMap ? 
-        <article className="mapcontainer bree">
-          <MapFourthStop />
-
-        </article>:null}
+        <>
+        <GuessNextStep3/>
+        </>
+       :null}
   </div> );
 }
  

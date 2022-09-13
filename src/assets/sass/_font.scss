@@ -23,11 +23,11 @@
 }
 .really-big-text{
    font-size: 92px;
-   line-height:1rem;
+   line-height:5rem;
   
     @include breakpoint(max-768){
       font-size:70px;
-      line-height:1rem;
+      line-height:4rem;
     }
     @include breakpoint(max-640){
       font-size:50px;
@@ -35,7 +35,7 @@
 }
 
 .normal-text{
-  font-size:34px;
+  font-size:28px;
 }
 .slightly-morenormal{
   font-size:20px;
@@ -43,5 +43,6 @@
 
 .error{
   font-size:52px;
+  color: red;
 }
 

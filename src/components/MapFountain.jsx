@@ -2,7 +2,7 @@ const MapFountain = () => {
 
   return ( 
   <div>
-    <h1 className="bree">KOLLA VAD FUSKIGT, EN KARTA!?</h1>
+    <h1 className="uncial">KOLLA VAD FUSKIGT, EN KARTA!?</h1>
     <p className="normal-text bree">Aja, ni ska hit:</p>
     <iframe
       

@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom";
 const MapThirdStop = () => {
 
+const tigerFacts = [{
+  id:1,
+  fact: "Tigrar är för fan de STÖRSTA katterna"
+},
+ {id:2,
+  fact: "Tigrar käkar BARA kött."},
+  {id:3,
+  fact: "Tigrar jagar ensamma. Alltså inte som ni."},
+  {id: 4,
+  fact: "Tigrar simmar fan FANTASTISKT. Så passarej om du ska bada i ån."},
+  {id: 5,
+    fact: "Man kan höra ett tigervrål upp till 3 km avstånd. Med andra ord: en tiger TIGER inte."
+  },
+{id: 6,
+fact: "Tigerjäveln kan fan springa i 65 km/h. Hur fort är inte det i Vasaloppet?"},
+{id: 7,
+fact: "Ingen tiger har samma mönster som någon annan. Alla är unika snöfling-sorry, tigrar."} ]
+
   return ( <div>
-    <h2 className="really-big-text bree">Ledtråd: <br/>Nära rosor </h2>
    
     <iframe
       width="600"
@@ -16,6 +33,16 @@ const MapThirdStop = () => {
     />
           <button className="bree"> <Link  to="/third-stop">Framme? Klicka här!
           </Link></button>
+          <div>
+            <h2 className="uncial really-big-text">Visste ni att:</h2>
+            <ul className="bree fact">
+             {tigerFacts.map((fact => (
+              <li className="bree normal-text" key={fact.id}>
+                <h3 className="uncial normal-text">{fact.id}</h3> {fact.fact}
+              </li>
+             )))}
+            </ul>
+          </div>
   </div> );
 }
  

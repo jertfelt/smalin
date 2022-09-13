@@ -87,17 +87,21 @@ p{
     h3{
       line-height:3rem;
       @include breakpoint(max-640){
-        line-height:0;
-        float:left;
-        align-items: flex-start;
+        width:70%;
+        line-height:2em;
+        text-align: center;
+        flex-wrap: wrap;
       }
     }
     label{
       font-size:24px;
       text-align: center;
       flex-wrap: wrap;
+      line-height:2.2rem;
+      width:80%;
       @include breakpoint(max-640){
        font-size:20px;
+       margin-bottom:-3rem;
       }
     }
     input {
@@ -109,8 +113,10 @@ p{
       font-size:20px;
       font-weight: bold;
       margin-top:10px;
+     
       @include breakpoint(max-640){
         padding:20px 40px;
+        text-align: center;
       }
     }
     input[type=submit]:hover{
@@ -140,6 +146,7 @@ p{
     flex-wrap: wrap;
     color:lavenderblush;
     margin-bottom:2rem;
+    padding:4px;
   }
 
   h2{
@@ -149,13 +156,13 @@ p{
     flex-wrap: wrap;
     text-align: center;
     line-height:2.8rem;
+ 
   }
 
   button {
     
     border:none;
     padding:2rem;
-    
     
     a{
       text-decoration: none;
@@ -165,7 +172,7 @@ p{
     }
   }
   button:hover{
-    background-color: black;
+    background-color: pink;
     a{
       color:black;
     }
