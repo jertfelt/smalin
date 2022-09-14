@@ -124,7 +124,7 @@ const ThirdStop = () => {
         </form>
 
           <div>
-          <h2 className="really-big-text bree"> {ErrMsg}</h2> 
+          <h2 className="normal-text bree"> {ErrMsg}</h2> 
           </div>
         </span>
         </> :null}

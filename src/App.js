@@ -6,7 +6,8 @@ import SecondQuest from "./views/SecondQuest";
 import Favicon from "react-favicon"
 import ThirdStop from "./views/ThirdStop";
 import "./App.scss";
-import FourthStop from "./views/FourthStop"
+import FourthStop from "./views/FourthStop";
+import FifthStop from "./views/FifthStop";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
         </Route>
       <Route path="/fjardeskadetske" element={<FourthStop />} >
       </Route>
-   
+      <Route path="/femtesmaller" element={<FifthStop />} >
+      </Route>
      </Routes>
     </div>
   </Router>

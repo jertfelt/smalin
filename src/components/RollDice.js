@@ -25,7 +25,7 @@ const Dice = () => {
         case 4:
           console.log("resultat", firstDie + secondDie)
           setSuccess(true);
-              setDieMsg("Du fick precis perfekt resultat!")
+              setDieMsg("Perfekt resultat!")
         break;
         case 5:
           console.log("resultat", firstDie + secondDie)
@@ -42,7 +42,7 @@ const Dice = () => {
         case 8:
               console.log("resultat", firstDie + secondDie)
               setSuccess(true);
-              setDieMsg("Du fick precis perfekt resultat!")
+              setDieMsg("Perfekt resultat!")
               break;
         case 9:
                 console.log("resultat", firstDie + secondDie)
@@ -55,7 +55,7 @@ const Dice = () => {
         case 11:
                     console.log("resultat", firstDie + secondDie)
                     setSuccess(true);
-              setDieMsg("Du fick precis perfekt resultat!")
+              setDieMsg("Perfekt resultat!")
                     break;
         case 12:
                       console.log("resultat", firstDie + secondDie)
@@ -68,21 +68,25 @@ const Dice = () => {
 
   return ( 
     <div className="dice__content">
-
+ {!success ? 
+ <>
     <button className="dice__button"
     onClick={rulla}>Rulla tärningarna!</button>
-  
+   
     <article className="dice__container">
     <img src={firstDieImg} alt="Tärning 1" className="tarning" />
     <img src={secondDieImg} alt="Tärning 2" className="tarning" />
     </article>
-    <p className="bree">
+    </>
+    :null }
+    <p className="bree normal-text">
     Det blir...{firstDie + secondDie}</p>
     <div>
-    <h2 className="really-big-text bree">{dieMsg}</h2>
+    <h2 className="really-big-text dice__diceresult bree">{dieMsg}</h2>
     {success ? 
     <div className="dice__result">
-      <h2 className="bree">Okej men kan du svara på det här rå:</h2>
+      <h2 className="bree">Simon får +{firstDie} i HP, Maling får +{secondDie} i HP.</h2>
+      <h2 className="bree">Skriv i ovan resultat och gå vidare:</h2>
       <DiceForm/>
     </div>:null}
   </div>

@@ -395,3 +395,49 @@
     padding-right:2em;
   }
 }
+
+.fourthStop{
+  background-color: black;
+  color: antiquewhite;
+  min-height: 190vh;
+  position:absolute;
+  width:100%;
+  padding:2rem;
+}
+
+.fifthStop{
+  &__map{
+    iframe{
+      width:90%;
+      min-width:400px;
+      height:600px;
+    }
+   
+  }
+  background-color: black;
+  color: antiquewhite;
+  min-height: 190vh;
+  position:absolute;
+  width:100%;
+  padding:2rem;
+  button{
+    cursor: pointer;
+    margin:1rem;
+    padding:10px;
+    border-radius: 9px;
+    background-color: pink;
+    font-size:20px;
+    font-family: Bree Serif;
+    a{
+      font-family: Bree Serif;
+      color:black;
+    }
+  }
+  button:hover{
+    transform: rotate(3deg);
+  }
+  button:active{
+    background-color: white;
+  }
+}
+

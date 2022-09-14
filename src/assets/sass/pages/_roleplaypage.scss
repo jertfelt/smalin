@@ -32,24 +32,146 @@
     img{
       margin:10px;
     }
-   
   }
+  &__forms{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    select{
+      padding:1rem;
+      background-color: white;
+    }
+    input{
+      padding:1rem;
+      margin-top:2rem;
+      background-color: pink;
+      border:none;
+      border-radius: 9px;
+      width:50%;
+
+    }
+  }
+&__last{
+  button{
+    cursor: pointer;
+    margin:1rem;
+    padding:10px;
+    border-radius: 9px;
+    background-color: pink;
+    font-size:20px;
+    font-family: Bree Serif;
+    a{
+      font-family: Bree Serif;
+      color:black;
+    }
+  }
+  button:hover{
+    transform: rotate(3deg);
+  }
+  button:active{
+    background-color: white;
+  }
+}
   &__button{
-    background-color: black;
-    color:white;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 9px;
     font-family: Merriweather;
     cursor: pointer;
     border:none;
-    padding:6px;
+    padding:10px;
     font-size:20px;
   }
+  &__button:hover{
+    background-color: pink;
+  }
+  &__diceresult{
+    line-height: 1em;
+  }
   &__result{
-    background-color: black;
+
     width:90%;
-    color: white;
+    border-radius: 19px;
+    max-width:600px;
+    text-align: center;
+    color:antiquewhite;
     padding:1rem;
+    
+    
+  }
+  &--msg{
+    color:antiquewhite;
+    font-family: MerriWeather;
+    line-height:2rem;
+    width:80%;
+    
+    display:flex;
+    flex-direction: column;
+  
+    p{ 
+     font-size: large;
+    text-align: left;}
+   
+  }
+  &__map{
+    display:block;
+    width:100%;
+    
+    align-items: center;
+    
+    margin: 0 auto;
+    margin-top:3rem;
+    iframe{
+      padding:0;
+      height:400px;
+      width:400px;
+      margin-left:-2rem;
+    }
+  }
+  &__forest{
+ 
+   &--guess{
+    padding-top:5em;
+    button{
+      font-family: MerriWeather;
+      margin-top:3em;
+      margin-right:1em;
+      padding:2rem;
+      font-size:20px;
+      background-color: pink;
+      border:none;
+      border-radius: 9px;
+    }
+    button:last-of-type:hover{
+      background-color: rosybrown;
+    }
+    button:first-of-type:hover{
+      background-color: white;
+    }
+
+   } 
+   
     h2{
-      width:50%;
+      margin-bottom:-3rem;
+    }
+    img{
+      border-radius: 50%;
+      max-width: 360px;
+      margin: -50px;
+      filter: saturate(0);
+      
+    }
+    h3{font-family: Uncial Antiqua;
+    font-size: 90px;
+    line-height: 0.1rem;
+      
+    }
+    &--h3{
+      color:pink;
+      position: relative;
+      top:120px;
+      z-index: 40;
+      filter: drop-shadow(0 0 0.5rem black);
     }
   }
 }
