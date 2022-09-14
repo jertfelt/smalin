@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/smalin/static/css/main.d8af798a.css",
-    "main.js": "/smalin/static/js/main.1130badf.js",
+    "main.css": "/smalin/static/css/main.455f86ec.css",
+    "main.js": "/smalin/static/js/main.75f723d1.js",
+    "static/media/amb_VW_Crafter_-2020_UL.jpg": "/smalin/static/media/amb_VW_Crafter_-2020_UL.8b6c058fc3c7c5478a36.jpg",
     "index.html": "/smalin/index.html",
-    "main.d8af798a.css.map": "/smalin/static/css/main.d8af798a.css.map",
-    "main.1130badf.js.map": "/smalin/static/js/main.1130badf.js.map"
+    "main.455f86ec.css.map": "/smalin/static/css/main.455f86ec.css.map",
+    "main.75f723d1.js.map": "/smalin/static/js/main.75f723d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8af798a.css",
-    "static/js/main.1130badf.js"
+    "static/css/main.455f86ec.css",
+    "static/js/main.75f723d1.js"
   ]
 }
