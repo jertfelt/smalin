@@ -13,6 +13,7 @@ const FirstQuest = () => {
   const [fontValue, setFontValue] = useState("");
   const [synonym, setSynonymValue] = useState("");
   const [errormessage, setErrorMessage] = useState("")
+  const [hideFirst, setHideFirst] = useState(false);
   
 
   const svar1 = "FONT"
@@ -30,6 +31,7 @@ const FirstQuest = () => {
       if (fordon === svar2) {
         setShowResults(true);
         setErrorMessage("")
+        setHideFirst(true);
       }
       else {
         setErrorMessage("Ledtråd: Vilket fordon var det som Simon fick se insidan av för inte så länge sen?")
@@ -45,9 +47,7 @@ const FirstQuest = () => {
     setShowMap(false)
   }
   
-  const restart = () => {
-    setShowResults(false);
-  }
+
 
   const ambulans = require("../assets/amb_VW_Crafter_-2020_UL.jpg");
   
@@ -83,14 +83,15 @@ const FirstQuest = () => {
       <button onClick={revealMap} className="bree" >Kolla kartan</button>
       {showMap ? 
       <div className="bree reveal__map">
-        <MapFountain />
-        <button onClick={closeMap}
+         <button onClick={closeMap}
         className="bree"> Stäng kartan!</button>
         <button className="next bree"> <Link to="/second-quest"
           className="bree">
           Framme? Klicka här!
           </Link>
         </button>
+        <MapFountain />
+       
        
       </div> :null }
       <button className="next bree"> 
@@ -98,11 +99,12 @@ const FirstQuest = () => {
           className="bree">Här är nästa steg!
           </Link>
         </button>
-        <button onClick={restart} className="bree">Gör om testet</button>
+       
         </span>
     </div>
     :null}
-   
+   {!hideFirst ? 
+   <>
     <form onSubmit={checkForAnswers}
     className="firstQuest--form ">
       <span>
@@ -203,7 +205,8 @@ const FirstQuest = () => {
   <div className="reveal--error">
   <p className="error uncial">{errormessage}</p>
   </div>
-  
+  </>
+  :null}
   
     
   </div> );
